@@ -37,5 +37,9 @@ public class Batalla {
     }
     
     
+    public void numRamdon(int num){
+        
+    }
+    
     
 }
