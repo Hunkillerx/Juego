@@ -12,6 +12,14 @@ import java.util.List;
  * @author Josex
  */
 public class Inventario {
-    public List inventarioItems;
+    private List inventarioItems;
+
+    public List getInventarioItems() {
+        return inventarioItems;
+    }
+
+    public void setInventarioItems(List inventarioItems) {
+        this.inventarioItems = inventarioItems;
+    }
     
 }

@@ -12,7 +12,23 @@ import java.util.List;
  * @author Josex
  */
 public class AlmacenPersonaje {
-    public List almacenMonstruos;
-    public List alamacenHeroes;
+    private List almacenMonstruos;
+    private List alamacenHeroes;
+
+    public List getAlmacenMonstruos() {
+        return almacenMonstruos;
+    }
+
+    public void setAlmacenMonstruos(List almacenMonstruos) {
+        this.almacenMonstruos = almacenMonstruos;
+    }
+
+    public List getAlamacenHeroes() {
+        return alamacenHeroes;
+    }
+
+    public void setAlamacenHeroes(List alamacenHeroes) {
+        this.alamacenHeroes = alamacenHeroes;
+    }
     
 }

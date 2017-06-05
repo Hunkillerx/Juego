@@ -26,6 +26,21 @@ public class Personaje {
     private Habilidad ataque3;
     private List almacenHabilidades;
 
+    public Personaje(String nombre, int tipo, byte nivel, byte ataque, byte defensa, byte hp, int estado, int currentHp, Habilidad ataque1, Habilidad ataque2, Habilidad ataque3, List almacenHabilidades) {
+        this.nombre = nombre;
+        this.tipo = tipo;
+        this.nivel = nivel;
+        this.ataque = ataque;
+        this.defensa = defensa;
+        this.hp = hp;
+        this.estado = estado;
+        this.currentHp = currentHp;
+        this.ataque1 = ataque1;
+        this.ataque2 = ataque2;
+        this.ataque3 = ataque3;
+        this.almacenHabilidades = almacenHabilidades;
+    }
+
     public String getNombre() {
         return nombre;
     }

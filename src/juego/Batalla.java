@@ -27,6 +27,14 @@ public class Batalla {
     public boolean lucha(){
         return false;
     }
+
+    public Queue getEnemigos() {
+        return enemigos;
+    }
+
+    public void setEnemigos(Queue enemigos) {
+        this.enemigos = enemigos;
+    }
     
     
     
