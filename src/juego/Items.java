@@ -9,10 +9,8 @@ package juego;
  *
  * @author Josex
  */
-class Habilidad {
-    private byte daño;
+public class Items {
     private int tipo;
     private int efecto;
     private String nombre;
-    
 }

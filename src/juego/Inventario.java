@@ -5,14 +5,13 @@
  */
 package juego;
 
+import java.util.List;
+
 /**
  *
  * @author Josex
  */
-class Habilidad {
-    private byte daño;
-    private int tipo;
-    private int efecto;
-    private String nombre;
+public class Inventario {
+    public List inventarioItems;
     
 }
