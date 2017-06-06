@@ -12,14 +12,27 @@ import java.util.List;
  * @author Josex
  */
 public class Inventario {
+
+    /**
+     * Lista que va ser el inventario.
+     */
     private List inventarioItems;
 
+    /**
+     * Metodo para llamar el inventario de items.
+     *
+     * @return Retorna la lista del inventario.
+     */
     public List getInventarioItems() {
         return inventarioItems;
     }
 
+    /**
+     * Metodo para modificar el inventario.
+     *
+     * @param inventarioItems lista en donde se guardan los items.
+     */
     public void setInventarioItems(List inventarioItems) {
         this.inventarioItems = inventarioItems;
     }
-    
 }
