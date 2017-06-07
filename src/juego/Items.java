@@ -84,7 +84,7 @@ public class Items {
         
         objetos[0] = new Items(1, 1, "Posicion de curacion");
         objetos[1] = new Items(2, 2, "Aumento de Ataque");
-        objetos[2] = new Items(3, 3, "Posicion de mana");
+        objetos[2] = new Items(3, 3, "Posicion grande de curacion");
         objetos[3] = new Items(4, 4, "Aumento de defensa");
         objetos[4] = new Items(5, 5, "Armadura");
         objetos[5] = new Items(6, 6, "Espada de plata");

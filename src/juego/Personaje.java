@@ -15,10 +15,10 @@ public class Personaje {
 
     private String nombre;
     private int tipo;
-    private byte nivel;
-    private byte ataque;
-    private byte defensa;
-    private byte hp;
+    private int nivel;
+    private int ataque;
+    private int defensa;
+    private int hp;
     private int estado;
     private int currentHp;
     private Habilidad ataque1;
@@ -43,7 +43,7 @@ public class Personaje {
      * @param almacenHabilidades Lista donde se almacenan las habilidades
      * creadas.
      */
-    public Personaje(String nombre, int tipo, byte nivel, byte ataque, byte defensa, byte hp, int estado, int currentHp, Habilidad ataque1, Habilidad ataque2, Habilidad ataque3, List almacenHabilidades) {
+    public Personaje(String nombre, int tipo, int nivel, int ataque, int defensa, int hp, int estado, int currentHp, Habilidad ataque1, Habilidad ataque2, Habilidad ataque3, List almacenHabilidades) {
         this.nombre = nombre;
         this.tipo = tipo;
         this.nivel = nivel;
@@ -103,7 +103,7 @@ public class Personaje {
      *
      * @return the nivel
      */
-    public byte getNivel() {
+    public int getNivel() {
         return nivel;
     }
 
@@ -112,7 +112,7 @@ public class Personaje {
      *
      * @param nivel the nivel to set
      */
-    public void setNivel(byte nivel) {
+    public void setNivel(int nivel) {
         this.nivel = nivel;
     }
 
@@ -121,7 +121,7 @@ public class Personaje {
      *
      * @return the ataque
      */
-    public byte getAtaque() {
+    public int getAtaque() {
         return ataque;
     }
 
@@ -130,7 +130,7 @@ public class Personaje {
      *
      * @param ataque the ataque to set
      */
-    public void setAtaque(byte ataque) {
+    public void setAtaque(int ataque) {
         this.ataque = ataque;
     }
 
@@ -139,7 +139,7 @@ public class Personaje {
      *
      * @return the defensa
      */
-    public byte getDefensa() {
+    public int getDefensa() {
         return defensa;
     }
 
@@ -148,7 +148,7 @@ public class Personaje {
      *
      * @param defensa the defensa to set
      */
-    public void setDefensa(byte defensa) {
+    public void setDefensa(int defensa) {
         this.defensa = defensa;
     }
 
@@ -157,7 +157,7 @@ public class Personaje {
      *
      * @return the hp
      */
-    public byte getHp() {
+    public int getHp() {
         return hp;
     }
 
@@ -166,7 +166,7 @@ public class Personaje {
      *
      * @param hp the hp to set
      */
-    public void setHp(byte hp) {
+    public void setHp(int hp) {
         this.hp = hp;
     }
 

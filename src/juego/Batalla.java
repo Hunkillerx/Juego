@@ -33,8 +33,24 @@ public class Batalla {
      * @param eleccionJugador eleccion del jugador.
      */
     public void usarItem(int eleccionJugador) {
-        if (almcItem.getTipo() == 1) {
-            person.getCurrentHp();
+        
+        if (almcItem.getTipo() == eleccionJugador && eleccionJugador == 1) {
+            person.setCurrentHp(person.getCurrentHp() + 15);
+
+        } else if (almcItem.getTipo() == eleccionJugador && eleccionJugador == 2) {
+            person.setAtaque(person.getAtaque() + 10);
+
+        } else if (almcItem.getTipo() == eleccionJugador && eleccionJugador == 3) {
+            person.setCurrentHp(person.getCurrentHp() + 30);
+
+        } else if (almcItem.getTipo() == eleccionJugador && eleccionJugador == 4) {
+            person.setDefensa(person.getDefensa() + 10);
+
+        } else if (almcItem.getTipo() == eleccionJugador && eleccionJugador == 5) {
+            person.setDefensa(person.getDefensa() + 30);
+
+        } else if (almcItem.getTipo() == eleccionJugador && eleccionJugador == 6) {
+            person.setAtaque(person.getAtaque() + 30);
         }
 
     }
