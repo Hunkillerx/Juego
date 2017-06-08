@@ -3,16 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package juego;
-
-import java.util.stream.StreamSupport;
+package Modelo;
 
 /**
  *
- * @author Josex
+ * @author Herrera Hernandez
  */
-public class Prueba {
-    boolean esPrimo(int num){
-        return num> 1 && StreamSupport.intStream.range(2,num)
-    }
+public class Dibujar {
+    
 }

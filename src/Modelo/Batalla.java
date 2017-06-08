@@ -3,10 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package juego;
+package Modelo;
 
 import juego.Items;
 import java.util.Queue;
+import juego.Items;
+import juego.Personaje;
 
 /**
  *
@@ -14,8 +16,8 @@ import java.util.Queue;
  */
 public class Batalla {
 
-    Items almcItem = new Items();
-    Personaje person = new Personaje();
+    Items almcItem;
+    Personaje person;
     private Queue enemigos;
 
     /**
@@ -33,7 +35,7 @@ public class Batalla {
      * @param eleccionJugador eleccion del jugador.
      */
     public void usarItem(int eleccionJugador) {
-        
+
         if (almcItem.getTipo() == eleccionJugador && eleccionJugador == 1) {
             person.setCurrentHp(person.getCurrentHp() + 15);
 
