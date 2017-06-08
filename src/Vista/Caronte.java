@@ -5,6 +5,9 @@
  */
 package Vista;
 
+import Modelo.Dibujar;
+import javax.swing.JFrame;
+
 /**
  *
  * @author Herrera Hernandez
@@ -16,6 +19,12 @@ public class Caronte extends javax.swing.JFrame {
      */
     public Caronte() {
         initComponents();
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        add(new Dibujar());
+        setVisible(true);
+        setLocationRelativeTo(null);
+        setResizable(false);
+
     }
 
     /**
@@ -27,17 +36,11 @@ public class Caronte extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(1063, 675));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel1.setOpaque(false);
-        jPanel1.setLayout(new java.awt.GridLayout());
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1060, 710));
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/amazonas.jpg"))); // NOI18N
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -82,6 +85,6 @@ public class Caronte extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabelFondo;
-    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
+
 }

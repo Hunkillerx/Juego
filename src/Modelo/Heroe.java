@@ -24,14 +24,11 @@ public class Heroe {
 
     /**
      *
-     * @param x
-     * @param y
-     * @param imagen
      */
-    public Heroe(int x, int y, Image imagen) {
+    public Heroe() {
         this.x = 0;
         this.y = 0;
-        heroe = "h.gif";
+        heroe = "kirito.png";
         ImageIcon img = new ImageIcon(this.getClass().getResource(heroe));
         imagen = img.getImage();
     }
