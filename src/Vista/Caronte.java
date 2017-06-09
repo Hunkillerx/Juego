@@ -21,6 +21,8 @@ public class Caronte extends javax.swing.JFrame {
         initComponents();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         add(new Dibujar());
+        setTitle("Juego");
+        setSize(1365, 700);
         setVisible(true);
         setLocationRelativeTo(null);
         setResizable(false);

@@ -39,19 +39,23 @@ public class Dibujar extends JPanel implements ActionListener {
      *
      * @param grafica
      */
+  
+    @Override
     public void paint(Graphics grafica) {
         super.paint(grafica);
-        Graphics2D g2 = (Graphics2D) grafica;
-        g2.drawImage(heroe.tenerImagen(), heroe.tenerX(), heroe.tenery(), null);
+        Graphics2D g2 =(Graphics2D) grafica;
+        g2.drawImage(heroe.getImagen(), heroe.getX(), heroe.getY(),null);
     }
 
     /**
      *
      * @param e
      */
+    @Override
     public void actionPerformed(ActionEvent e) {
         heroe.mover();
         repaint();
+        
     }
 
     /**
@@ -63,6 +67,7 @@ public class Dibujar extends JPanel implements ActionListener {
          *
          * @param e
          */
+        @Override
         public void keyPressed(KeyEvent e) {
             heroe.keyPressed(e);
         }
@@ -71,6 +76,7 @@ public class Dibujar extends JPanel implements ActionListener {
          *
          * @param e
          */
+        @Override
         public void keyReleased(KeyEvent e) {
             heroe.keyReleased(e);
         }
