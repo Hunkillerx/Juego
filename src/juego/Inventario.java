@@ -8,8 +8,11 @@ package juego;
 import java.util.List;
 
 /**
+ * Esta clase crea el espacio para guardar los items.
  *
- * @author Josex
+ * @author Jose Diaz & Brayan Herrera
+ * @since 08/06/2017
+ * @version 1.0
  */
 public class Inventario {
 

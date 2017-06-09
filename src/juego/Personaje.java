@@ -8,8 +8,11 @@ package juego;
 import java.util.List;
 
 /**
- *
- * @author Jose Diaz
+ * Esta clase contiene los atributos de los personajes.
+ * 
+ * @author Jose Diaz & Brayan Herrera
+ * @since 08/06/2017
+ * @version 1.0
  */
 public class Personaje {
 
@@ -276,5 +279,12 @@ public class Personaje {
      */
     public void setAlmacenHabilidades(List almacenHabilidades) {
         this.almacenHabilidades = almacenHabilidades;
+    }
+    
+    /**
+     * Almacena habilidades creadas.
+     */
+    public void habilidades (){
+        almacenHabilidades.add(new Habilidad(20, 1, 4, "Espadazo"));
     }
 }

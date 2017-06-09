@@ -6,22 +6,42 @@
 package juego;
 
 /**
+ * Esta clase contiene los atributos de una habilidad.
  *
- * @author Josex
+ * @author Jose Diaz & Brayan Herrera
+ * @since 08/06/2017
+ * @version 1.0
  */
 class Habilidad {
 
-    private byte daño;
+    private int daño;
     private int tipo;
     private int efecto;
     private String nombre;
+
+    // Tipo = 1. Cuerpo a cuerpo , 2. largo alcance 
+    // Efecto = 1. Quemadura, 2. Paralisis, 3. Sangrado 
+    /**
+     * Constructor de la clase Habilidad.
+     *
+     * @param daño Daño que hace el ataque o habilidad.
+     * @param tipo Tipo de habilidad.
+     * @param efecto Efecto que hace la habilidad.
+     * @param nombre Nombre de la habilidad.
+     */
+    public Habilidad(int daño, int tipo, int efecto, String nombre) {
+        this.daño = daño;
+        this.tipo = tipo;
+        this.efecto = efecto;
+        this.nombre = nombre;
+    }
 
     /**
      * Llama la variable daño.
      *
      * @return the daño
      */
-    public byte getDaño() {
+    public int getDaño() {
         return daño;
     }
 
@@ -30,7 +50,7 @@ class Habilidad {
      *
      * @param daño the daño to set
      */
-    public void setDaño(byte daño) {
+    public void setDaño(int daño) {
         this.daño = daño;
     }
 

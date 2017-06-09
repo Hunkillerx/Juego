@@ -9,8 +9,11 @@ import Modelo.Dibujar;
 import javax.swing.JFrame;
 
 /**
+ * Esta es la interfaz grafica del movimiento y el mapa.
  *
- * @author Herrera Hernandez
+ * @author Jose Diaz & Brayan Herrera
+ * @since 08/06/2017
+ * @version 1.0
  */
 public class Caronte extends javax.swing.JFrame {
 
@@ -18,14 +21,17 @@ public class Caronte extends javax.swing.JFrame {
      * Creates new form Caronte
      */
     public Caronte() {
-        initComponents();
+
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         add(new Dibujar());
+        setVisible(true);
+
         setTitle("Juego");
         setSize(1365, 700);
-        setVisible(true);
+
         setLocationRelativeTo(null);
         setResizable(false);
+        initComponents();
 
     }
 

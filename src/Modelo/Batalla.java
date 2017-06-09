@@ -11,8 +11,11 @@ import juego.Items;
 import juego.Personaje;
 
 /**
+ * Esta clase contiene los metodos para el evento de la batalla.
  *
- * @author Josex
+ * @author Jose Diaz & Brayan Herrera
+ * @since 08/06/2017
+ * @version 1.0
  */
 public class Batalla {
 

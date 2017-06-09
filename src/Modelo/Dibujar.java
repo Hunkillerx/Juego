@@ -16,19 +16,22 @@ import javax.swing.JPanel;
 import javax.swing.Timer;
 
 /**
+ * Esta clase dibuja el panel en el que se mueve la imagen.
  *
- * @author Herrera Hernandez
+ * @author Jose Diaz & Brayan Herrera
+ * @since 08/06/2017
+ * @version 1.0
  */
 public class Dibujar extends JPanel implements ActionListener {
-    
-    Heroe heroe = new Heroe();
+
+    HeroeMovimiento heroe = new HeroeMovimiento();
     Timer timer = new Timer(5, this);
 
     /**
-     *
+     * Constructor de la clase dibujar.
      */
     public Dibujar() {
-        
+
         setBackground(Color.decode(String.valueOf(0)));
         setFocusable(true);
         addKeyListener(new teclado());
@@ -36,36 +39,39 @@ public class Dibujar extends JPanel implements ActionListener {
     }
 
     /**
+     * Este metodo pinta una grafica que contien la imagen.
      *
-     * @param grafica
+     * @param grafica grafica creada.
      */
-  
     @Override
     public void paint(Graphics grafica) {
         super.paint(grafica);
-        Graphics2D g2 =(Graphics2D) grafica;
-        g2.drawImage(heroe.getImagen(), heroe.getX(), heroe.getY(),null);
+        Graphics2D g2 = (Graphics2D) grafica;
+        g2.drawImage(heroe.getImagen(), heroe.getX(), heroe.getY(), null);
     }
 
     /**
+     * Este metodo lee las acciones del teclado y repinta cuando la imagen se
+     * mueve.
      *
-     * @param e
+     * @param e accion del teclado.
      */
     @Override
     public void actionPerformed(ActionEvent e) {
         heroe.mover();
         repaint();
-        
+
     }
 
     /**
-     *
+     * Esta clase sirve para tomar las acciones del teclado.
      */
     private class teclado extends KeyAdapter {
 
         /**
+         * Metodo para leer cuando precionan una tecla.
          *
-         * @param e
+         * @param e accion de presionar.
          */
         @Override
         public void keyPressed(KeyEvent e) {
@@ -73,13 +79,14 @@ public class Dibujar extends JPanel implements ActionListener {
         }
 
         /**
+         * Metodo para leer cuando sueltan una tecla.
          *
-         * @param e
+         * @param e accion de soltar.
          */
         @Override
         public void keyReleased(KeyEvent e) {
             heroe.keyReleased(e);
         }
     }
-    
+
 }
