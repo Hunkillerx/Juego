@@ -16,6 +16,11 @@ import java.util.List;
  */
 public class AlmacenPersonaje {
 
+    public AlmacenPersonaje() {
+        this.almacenMonstruos = almacenMonstruos;
+        this.alamacenHeroes = alamacenHeroes;
+    }
+
     private List almacenMonstruos;
     private List alamacenHeroes;
     

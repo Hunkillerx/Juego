@@ -6,6 +6,8 @@
 package Vista;
 
 import javax.swing.JLabel;
+import juego.AlmacenPersonaje;
+
 
 /**
  * Esta interfaz grafica es de la batalla.
@@ -94,7 +96,12 @@ public class Batalla extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    
+    public void imagenEnemigo(){
+       almacenPersonaje.getAlmacenMonstruos();
+        if(){
+            
+        }
+    }
     
     /**
      * @param args the command line arguments
@@ -139,4 +146,6 @@ public class Batalla extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
+
+    AlmacenPersonaje almacenPersonaje = new AlmacenPersonaje();
 }
