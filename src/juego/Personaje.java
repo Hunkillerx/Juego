@@ -315,7 +315,18 @@ public class Personaje {
      */
     public void habilidades() {
 
-
+        almacenHabilidades[0] = new Habilidad(10, 1, 4, "Golpe");
+        almacenHabilidades[1] = new Habilidad(25, 1, 4, "Codazo");
+        almacenHabilidades[2] = new Habilidad(20, 1, 1, "puño de fuego");
+        almacenHabilidades[3] = new Habilidad(30, 2, 2, "Trueno");
+        almacenHabilidades[4] = new Habilidad(23, 2, 1, "Lava");
+        almacenHabilidades[5] = new Habilidad(15, 1, 4, "Patada");
+        almacenHabilidades[6] = new Habilidad(10, 2, 3, "Mordisco");
+        almacenHabilidades[7] = new Habilidad(20, 2, 2, "Congelacion");
+        almacenHabilidades[8] = new Habilidad(30, 1, 3, "Cuchillada");
+        almacenHabilidades[9] = new Habilidad(17, 2, 3, "Zarpazo");
 
     }
+
+    AlmacenPersonaje almacen = new AlmacenPersonaje();
 }
