@@ -6,8 +6,9 @@
 package juego;
 
 /**
- * Esta clase contiene los atributos de los items y contiene un arreglo con ellos.
- * 
+ * Esta clase contiene los atributos de los items y contiene un arreglo con
+ * ellos.
+ *
  * @author Jose Diaz & Brayan Herrera
  * @since 08/06/2017
  * @version 1.0
@@ -29,10 +30,6 @@ public class Items {
         this.tipo = tipo;
         this.efecto = efecto;
         this.nombre = nombre;
-    }
-
-    Items() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
