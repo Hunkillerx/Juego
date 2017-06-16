@@ -25,6 +25,8 @@ public class HeroeMovimiento {
     private int y;
     private Image imagen;
 
+    private int contadorPasos;
+
     /**
      * Este es el constructor de la clase movimiento.
      */
@@ -76,6 +78,40 @@ public class HeroeMovimiento {
         } else if (key == KeyEvent.VK_DOWN) {
             setDy(0);
         }
+    }
+
+    public void keyListener(KeyEvent e) {
+
+        int key = e.getKeyCode();
+
+        if (key == KeyEvent.VK_LEFT) {
+            setContadorPasos(getContadorPasos() + 1);
+        } else if (key == KeyEvent.VK_RIGHT) {
+            setContadorPasos(getContadorPasos() + 1);
+        } else if (key == KeyEvent.VK_UP) {
+            setContadorPasos(getContadorPasos() + 1);
+        } else if (key == KeyEvent.VK_DOWN) {
+            setContadorPasos(getContadorPasos() + 1);
+        }
+
+    }
+
+    /**
+     * Llama el contador de pasos.
+     *
+     * @return the contadorPasos
+     */
+    public int getContadorPasos() {
+        return contadorPasos;
+    }
+
+    /**
+     * Modifica el contador de pasos.
+     *
+     * @param contadorPasos the contadorPasos to set
+     */
+    public void setContadorPasos(int contadorPasos) {
+        this.contadorPasos = contadorPasos;
     }
 
     /**

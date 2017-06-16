@@ -6,6 +6,9 @@
 package Vista;
 
 import Controlador.Dibujar;
+import Controlador.HeroeMovimiento;
+import java.awt.event.KeyEvent;
+import java.util.Random;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -39,6 +42,20 @@ public class Caronte extends javax.swing.JFrame {
 
     }
 
+    /**
+     * Este metodo de limita caundo ocurren las batallas.
+     */
+    public void eventoAleatorio() {
+        Random aleatorio = new Random();
+        int alazar = 1 + aleatorio.nextInt(100);
+        int numComparar = contador.getContadorPasos();
+
+        if (alazar == numComparar) {
+            new GraficaBatalla();
+        } else if (alazar < numComparar) {
+            contador.setContadorPasos(0);
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -104,4 +121,5 @@ public class Caronte extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 
+    HeroeMovimiento contador = new HeroeMovimiento();
 }
