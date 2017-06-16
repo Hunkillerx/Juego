@@ -7,6 +7,7 @@ package juego;
 
 import Controlador.HeroeMovimiento;
 import juego.Personaje;
+
 /**
  * Esta clase crea el espacio y almacena los personajes entre heroes y
  * monstruos.
@@ -17,11 +18,7 @@ import juego.Personaje;
  */
 public class AlmacenPersonaje {
 
-    public Personaje[] getAlmacenMonstruos() {
-        return almacenMonstruos;
-    }
-
-    Personaje[] almacenMonstruos = new Personaje[5];
+    private Personaje[] almacenMonstruos = new Personaje[5];
 
     /**
      * Aqui estan almacenados los monstruos.
@@ -38,10 +35,24 @@ public class AlmacenPersonaje {
 
     }
 
+    private Personaje heroe = new Personaje("Kirito", 1, 0, 0, 0, 0, 0, 0, null, null, null);
+
+    /**
+     * Llama al almacen de mostruos.
+     *
+     * @return the almacenMonstruos
+     */
+    public Personaje[] getAlmacenMonstruos() {
+        return almacenMonstruos;
+    }
+
+    /**
+     * Llama al objeto creado denominado heroe.
+     *
+     * @return the heroe
+     */
     public Personaje getHeroe() {
         return heroe;
     }
 
-    Personaje heroe = new Personaje("Kirito", 1, 0, 0, 0, 0, 0, 0,null , null, null);
-    
 }
