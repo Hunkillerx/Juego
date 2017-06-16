@@ -26,21 +26,17 @@ public class AlmacenPersonaje {
      */
     public void bestiario() {
 
-        almacenMonstruos[0] = new Personaje("Licantropo", 1, 0, 0, 0, 0, 0, 0, null, null, null);
+        almacenMonstruos[0] = new Personaje("Licantropo", 1, 0, 0, 0, 0, 0, 0, false, false, null, null, null);
 
-        almacenMonstruos[1] = new Personaje("Kimera", 1, 0, 0, 0, 0, 0, 0, null, null, null);
+        almacenMonstruos[1] = new Personaje("Kimera", 1, 0, 0, 0, 0, 0, 0, false, false, null, null, null);
 
-        almacenMonstruos[2] = new Personaje("Ogro de las cavernas", 1, 0, 0, 0, 0, 0, 0, null, null, null);
+        almacenMonstruos[2] = new Personaje("Ogro de las cavernas", 1, 0, 0, 0, 0, 0, 0, false, false, null, null, null);
 
-        almacenMonstruos[3] = new Personaje("Nocturne", 2, 0, 0, 0, 0, 0, 0, null, null, null);
-        
-        for (int i = 0; i < almacenMonstruos.length; i++) {
-            setMonstruo1(almacenMonstruos[i]);
-        }
+        almacenMonstruos[3] = new Personaje("Nocturne", 2, 0, 0, 0, 0, 0, 0, false, false, null, null, null);
 
     }
 
-    private Personaje heroe = new Personaje("Kirito", 1, 0, 0, 0, 0, 0, 0, null, null, null);
+    private Personaje heroe = new Personaje("Kirito", 1, 0, 0, 0, 0, 0, 0, false, false, null, null, null);
 
     /**
      * Llama al almacen de mostruos.

@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  * Esta clase contiene los atributos de los personajes.
- * 
+ *
  * @author Jose Diaz & Brayan Herrera
  * @since 08/06/2017
  * @version 1.0
@@ -24,6 +24,8 @@ public class Personaje {
     private int hp;
     private int estado;
     private int currentHp;
+    private boolean inicia;
+    private boolean siguiente;
     private Habilidad ataque1;
     private Habilidad ataque2;
     private Habilidad ataque3;
@@ -40,13 +42,12 @@ public class Personaje {
      * @param hp Hp o salud total del personaje.
      * @param estado Estado del personaje.
      * @param currentHp Hp o salud actual del personaje.
+     * @param incia Estado de si inicia atacando el personaje o no.
      * @param ataque1 Ataque1 del personaje.
      * @param ataque2 Ataque2 del personaje.
      * @param ataque3 Ataque3 del personaje.
-     * @param almacenHabilidades Lista donde se almacenan las habilidades
-     * creadas.
      */
-    public Personaje(String nombre, int tipo, int nivel, int ataque, int defensa, int hp, int estado, int currentHp, Habilidad ataque1, Habilidad ataque2, Habilidad ataque3) {
+    public Personaje(String nombre, int tipo, int nivel, int ataque, int defensa, int hp, int estado, int currentHp, boolean incia, boolean siguiente,Habilidad ataque1, Habilidad ataque2, Habilidad ataque3) {
         this.nombre = nombre;
         this.tipo = tipo;
         this.nivel = nivel;
@@ -55,6 +56,8 @@ public class Personaje {
         this.hp = hp;
         this.estado = estado;
         this.currentHp = currentHp;
+        this.inicia = false;
+        this.siguiente = false;
         this.ataque1 = ataque1;
         this.ataque2 = ataque2;
         this.ataque3 = ataque3;
@@ -209,6 +212,42 @@ public class Personaje {
     }
 
     /**
+     * Llama la variable inicia.
+     *
+     * @return the inicia
+     */
+    public boolean isInicia() {
+        return inicia;
+    }
+
+    /**
+     * Modifica la variable inicia.
+     *
+     * @param inicia the inicia to set
+     */
+    public void setInicia(boolean inicia) {
+        this.inicia = inicia;
+    }
+
+    /**
+     * Llama la varible sigueinte.
+     *
+     * @return the siguiente
+     */
+    public boolean isSiguiente() {
+        return siguiente;
+    }
+
+    /**
+     * Modifica la variable siguiente.
+     *
+     * @param siguiente the siguiente to set
+     */
+    public void setSiguiente(boolean siguiente) {
+        this.siguiente = siguiente;
+    }
+
+    /**
      * Llama la variable ataque1.
      *
      * @return the ataque1
@@ -270,22 +309,24 @@ public class Personaje {
     public Habilidad[] getAlmacenHabilidades() {
         return almacenHabilidades;
     }
-    
+
     /**
      * Almacena habilidades creadas.
      */
-    public void habilidades (){
-        
-        almacenHabilidades[0]= new Habilidad(10, 1, 4, "Golpe");
-        almacenHabilidades[1]= new Habilidad(25, 1, 4, "Codazo");
-        almacenHabilidades[2]= new Habilidad(20, 1, 1, "puño de fuego");
-        almacenHabilidades[3]= new Habilidad(30, 2, 2, "Trueno");
-        almacenHabilidades[4]= new Habilidad(23, 2, 1, "Lava");
-        almacenHabilidades[5]= new Habilidad(15, 1, 4, "Patada");
-        almacenHabilidades[6]= new Habilidad(10, 2, 3, "Mordisco");
-        almacenHabilidades[7]= new Habilidad(20, 2, 2, "Congelacion");
-        almacenHabilidades[8]= new Habilidad(30, 1, 3, "Cuchillada");
-        almacenHabilidades[9]= new Habilidad(17, 2, 3, "Zarpazo");
-        
+    public void habilidades() {
+
+        almacenHabilidades[0] = new Habilidad(10, 1, 4, "Golpe");
+        almacenHabilidades[1] = new Habilidad(25, 1, 4, "Codazo");
+        almacenHabilidades[2] = new Habilidad(20, 1, 1, "puño de fuego");
+        almacenHabilidades[3] = new Habilidad(30, 2, 2, "Trueno");
+        almacenHabilidades[4] = new Habilidad(23, 2, 1, "Lava");
+        almacenHabilidades[5] = new Habilidad(15, 1, 4, "Patada");
+        almacenHabilidades[6] = new Habilidad(10, 2, 3, "Mordisco");
+        almacenHabilidades[7] = new Habilidad(20, 2, 2, "Congelacion");
+        almacenHabilidades[8] = new Habilidad(30, 1, 3, "Cuchillada");
+        almacenHabilidades[9] = new Habilidad(17, 2, 3, "Zarpazo");
+
     }
+
+    AlmacenPersonaje almacen = new AlmacenPersonaje();
 }
