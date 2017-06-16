@@ -5,12 +5,9 @@
  */
 package Vista;
 
-import Controlador.Dibujar;
 import Controlador.HeroeMovimiento;
-import java.awt.event.KeyEvent;
-import java.util.Random;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
 /**
  * Esta es la interfaz grafica del movimiento y el mapa.
@@ -25,37 +22,29 @@ public class Caronte extends javax.swing.JFrame {
      * Creates new form Caronte
      */
     public Caronte() {
-
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        add(new Dibujar());
-        setVisible(true);
-
-        setTitle("Juego");
-
-        setSize(1365, 700);
-
-        setLocationRelativeTo(null);
-
-        setResizable(false);
-
         initComponents();
-
-    }
-
-    /**
-     * Este metodo de limita caundo ocurren las batallas.
-     */
-    public void eventoAleatorio() {
-        Random aleatorio = new Random();
-        int alazar = 1 + aleatorio.nextInt(100);
-        int numComparar = contador.getContadorPasos();
-
-        if (alazar == numComparar) {
-            new GraficaBatalla();
-        } else if (alazar < numComparar) {
-            contador.setContadorPasos(0);
+        this.setLocationRelativeTo(null);
+        try {
+             setIconImage(new ImageIcon(getClass().getResource("/Recursos/kimera.png")).getImage());
+        }catch(Exception e){
         }
+        iniciarComponentes();
     }
+
+        /**
+         * Este metodo de limita caundo ocurren las batallas.
+//         */
+//    public void eventoAleatorio() {
+//        Random aleatorio = new Random();
+//        int alazar = 1 + aleatorio.nextInt(100);
+//        int numComparar = contador.getContadorPasos();
+//
+//        if (alazar == numComparar) {
+//            new GraficaBatalla();
+//        } else if (alazar < numComparar) {
+//            contador.setContadorPasos(0);
+//        }
+//    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -66,17 +55,19 @@ public class Caronte extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabelFondo = new javax.swing.JLabel();
+        panelTablero = new javax.swing.JPanel();
+        Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setOpaque(false);
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1060, 710));
+        panelTablero.setLayout(new java.awt.GridLayout(10, 10));
 
-        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/amazonas.jpg"))); // NOI18N
-        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/amazonas.jpg"))); // NOI18N
+        Fondo.setPreferredSize(new java.awt.Dimension(640, 640));
+        panelTablero.add(Fondo);
+
+        getContentPane().add(panelTablero, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -117,9 +108,138 @@ public class Caronte extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabelFondo;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel Fondo;
+    private javax.swing.JPanel panelTablero;
     // End of variables declaration//GEN-END:variables
 
     HeroeMovimiento contador = new HeroeMovimiento();
+    JLabel[][] posiciones = new JLabel[10][10];
+    ImageIcon[] imagenesTablero = new ImageIcon[6];
+    int posicionY = 0;
+    int posicionX= 0;
+    
+    private void iniciarComponentes(){
+        
+        imagenesTablero[0] = new ImageIcon(getClass().getResource("Recursos/kirito.png"));
+        imagenesTablero[1] = new ImageIcon(getClass().getResource("Recursos/kirito.png"));
+        imagenesTablero[2] = new ImageIcon(getClass().getResource("Recursos/kirito.png"));
+        imagenesTablero[3] = new ImageIcon(getClass().getResource("Recursos/kirito.png"));
+        imagenesTablero[4] = new ImageIcon(getClass().getResource("Recursos/kirito.png"));
+        imagenesTablero[5] = new ImageIcon(getClass().getResource("Recursos/kirito.png"));
+        
+        //<editor-fold defaultstate="collapsed" desc=" Armado del tablero de Juego ">
+        posiciones[posicionY][posicionX] = new JLabel(imagenesTablero[0]);
+
+        panelTablero.add(posiciones[0][0] = new JLabel(imagenesTablero[0]));
+        panelTablero.add(posiciones[0][1] = new JLabel(imagenesTablero[3]));
+        panelTablero.add(posiciones[0][2] = new JLabel(imagenesTablero[1]));
+        panelTablero.add(posiciones[0][3] = new JLabel(imagenesTablero[3]));
+        panelTablero.add(posiciones[0][4] = new JLabel(imagenesTablero[3]));
+        panelTablero.add(posiciones[0][5] = new JLabel(imagenesTablero[3]));
+        panelTablero.add(posiciones[0][6] = new JLabel(imagenesTablero[3]));
+        panelTablero.add(posiciones[0][7] = new JLabel(imagenesTablero[3]));
+        panelTablero.add(posiciones[0][8] = new JLabel(imagenesTablero[3]));
+        panelTablero.add(posiciones[0][9] = new JLabel(imagenesTablero[3]));
+
+        panelTablero.add(posiciones[1][0] = new JLabel(imagenesTablero[3]));
+        panelTablero.add(posiciones[1][1] = new JLabel(imagenesTablero[3]));
+        panelTablero.add(posiciones[1][2] = new JLabel(imagenesTablero[1]));
+        panelTablero.add(posiciones[1][3] = new JLabel(imagenesTablero[3]));
+        panelTablero.add(posiciones[1][4] = new JLabel(imagenesTablero[3]));
+        panelTablero.add(posiciones[1][5] = new JLabel(imagenesTablero[1]));
+        panelTablero.add(posiciones[1][6] = new JLabel(imagenesTablero[1]));
+        panelTablero.add(posiciones[1][7] = new JLabel(imagenesTablero[1]));
+        panelTablero.add(posiciones[1][8] = new JLabel(imagenesTablero[1]));
+        panelTablero.add(posiciones[1][9] = new JLabel(imagenesTablero[3]));
+
+        panelTablero.add(posiciones[2][0] = new JLabel(imagenesTablero[1]));
+        panelTablero.add(posiciones[2][1] = new JLabel(imagenesTablero[3]));
+        panelTablero.add(posiciones[2][2] = new JLabel(imagenesTablero[1]));
+        panelTablero.add(posiciones[2][3] = new JLabel(imagenesTablero[3]));
+        panelTablero.add(posiciones[2][4] = new JLabel(imagenesTablero[1]));
+        panelTablero.add(posiciones[2][5] = new JLabel(imagenesTablero[2]));
+        panelTablero.add(posiciones[2][6] = new JLabel(imagenesTablero[3]));
+        panelTablero.add(posiciones[2][7] = new JLabel(imagenesTablero[3]));
+        panelTablero.add(posiciones[2][8] = new JLabel(imagenesTablero[3]));
+        panelTablero.add(posiciones[2][9] = new JLabel(imagenesTablero[3]));
+
+        panelTablero.add(posiciones[3][0] = new JLabel(imagenesTablero[1]));
+        panelTablero.add(posiciones[3][1] = new JLabel(imagenesTablero[4]));
+        panelTablero.add(posiciones[3][2] = new JLabel(imagenesTablero[3]));
+        panelTablero.add(posiciones[3][3] = new JLabel(imagenesTablero[3]));
+        panelTablero.add(posiciones[3][4] = new JLabel(imagenesTablero[1]));
+        panelTablero.add(posiciones[3][5] = new JLabel(imagenesTablero[1]));
+        panelTablero.add(posiciones[3][6] = new JLabel(imagenesTablero[1]));
+        panelTablero.add(posiciones[3][7] = new JLabel(imagenesTablero[1]));
+        panelTablero.add(posiciones[3][8] = new JLabel(imagenesTablero[1]));
+        panelTablero.add(posiciones[3][9] = new JLabel(imagenesTablero[3]));
+
+        panelTablero.add(posiciones[4][0] = new JLabel(imagenesTablero[3]));
+        panelTablero.add(posiciones[4][1] = new JLabel(imagenesTablero[1]));
+        panelTablero.add(posiciones[4][2] = new JLabel(imagenesTablero[1]));
+        panelTablero.add(posiciones[4][3] = new JLabel(imagenesTablero[1]));
+        panelTablero.add(posiciones[4][4] = new JLabel(imagenesTablero[3]));
+        panelTablero.add(posiciones[4][5] = new JLabel(imagenesTablero[3]));
+        panelTablero.add(posiciones[4][6] = new JLabel(imagenesTablero[3]));
+        panelTablero.add(posiciones[4][7] = new JLabel(imagenesTablero[3]));
+        panelTablero.add(posiciones[4][8] = new JLabel(imagenesTablero[3]));
+        panelTablero.add(posiciones[4][9] = new JLabel(imagenesTablero[3]));
+
+        panelTablero.add(posiciones[5][0] = new JLabel(imagenesTablero[3]));
+        panelTablero.add(posiciones[5][1] = new JLabel(imagenesTablero[1]));
+        panelTablero.add(posiciones[5][2] = new JLabel(imagenesTablero[2]));
+        panelTablero.add(posiciones[5][3] = new JLabel(imagenesTablero[1]));
+        panelTablero.add(posiciones[5][4] = new JLabel(imagenesTablero[3]));
+        panelTablero.add(posiciones[5][5] = new JLabel(imagenesTablero[1]));
+        panelTablero.add(posiciones[5][6] = new JLabel(imagenesTablero[2]));
+        panelTablero.add(posiciones[5][7] = new JLabel(imagenesTablero[1]));
+        panelTablero.add(posiciones[5][8] = new JLabel(imagenesTablero[1]));
+        panelTablero.add(posiciones[5][9] = new JLabel(imagenesTablero[1]));
+
+        panelTablero.add(posiciones[6][0] = new JLabel(imagenesTablero[3]));
+        panelTablero.add(posiciones[6][1] = new JLabel(imagenesTablero[1]));
+        panelTablero.add(posiciones[6][2] = new JLabel(imagenesTablero[3]));
+        panelTablero.add(posiciones[6][3] = new JLabel(imagenesTablero[1]));
+        panelTablero.add(posiciones[6][4] = new JLabel(imagenesTablero[3]));
+        panelTablero.add(posiciones[6][5] = new JLabel(imagenesTablero[1]));
+        panelTablero.add(posiciones[6][6] = new JLabel(imagenesTablero[1]));
+        panelTablero.add(posiciones[6][7] = new JLabel(imagenesTablero[3]));
+        panelTablero.add(posiciones[6][8] = new JLabel(imagenesTablero[3]));
+        panelTablero.add(posiciones[6][9] = new JLabel(imagenesTablero[3]));
+
+        panelTablero.add(posiciones[7][0] = new JLabel(imagenesTablero[3]));
+        panelTablero.add(posiciones[7][1] = new JLabel(imagenesTablero[1]));
+        panelTablero.add(posiciones[7][2] = new JLabel(imagenesTablero[3]));
+        panelTablero.add(posiciones[7][3] = new JLabel(imagenesTablero[3]));
+        panelTablero.add(posiciones[7][4] = new JLabel(imagenesTablero[3]));
+        panelTablero.add(posiciones[7][5] = new JLabel(imagenesTablero[2]));
+        panelTablero.add(posiciones[7][6] = new JLabel(imagenesTablero[1]));
+        panelTablero.add(posiciones[7][7] = new JLabel(imagenesTablero[3]));
+        panelTablero.add(posiciones[7][8] = new JLabel(imagenesTablero[1]));
+        panelTablero.add(posiciones[7][9] = new JLabel(imagenesTablero[3]));
+
+        panelTablero.add(posiciones[8][0] = new JLabel(imagenesTablero[3]));
+        panelTablero.add(posiciones[8][1] = new JLabel(imagenesTablero[3]));
+        panelTablero.add(posiciones[8][2] = new JLabel(imagenesTablero[1]));
+        panelTablero.add(posiciones[8][3] = new JLabel(imagenesTablero[1]));
+        panelTablero.add(posiciones[8][4] = new JLabel(imagenesTablero[1]));
+        panelTablero.add(posiciones[8][5] = new JLabel(imagenesTablero[3]));
+        panelTablero.add(posiciones[8][6] = new JLabel(imagenesTablero[3]));
+        panelTablero.add(posiciones[8][7] = new JLabel(imagenesTablero[3]));
+        panelTablero.add(posiciones[8][8] = new JLabel(imagenesTablero[1]));
+        panelTablero.add(posiciones[8][9] = new JLabel(imagenesTablero[3]));
+
+        panelTablero.add(posiciones[9][0] = new JLabel(imagenesTablero[2]));
+        panelTablero.add(posiciones[9][1] = new JLabel(imagenesTablero[3]));
+        panelTablero.add(posiciones[9][2] = new JLabel(imagenesTablero[3]));
+        panelTablero.add(posiciones[9][3] = new JLabel(imagenesTablero[3]));
+        panelTablero.add(posiciones[9][4] = new JLabel(imagenesTablero[3]));
+        panelTablero.add(posiciones[9][5] = new JLabel(imagenesTablero[1]));
+        panelTablero.add(posiciones[9][6] = new JLabel(imagenesTablero[1]));
+        panelTablero.add(posiciones[9][7] = new JLabel(imagenesTablero[1]));
+        panelTablero.add(posiciones[9][8] = new JLabel(imagenesTablero[3]));
+        panelTablero.add(posiciones[9][9] = new JLabel(imagenesTablero[5]));
+        //</editor-fold>
+    }
+
 }
