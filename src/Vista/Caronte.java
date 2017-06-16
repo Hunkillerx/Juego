@@ -80,7 +80,7 @@ public class Caronte extends javax.swing.JFrame {
         switch (teclaPresionada) {
             case KeyEvent.VK_UP:
                 if (posicionY > 0) {
-                    if (posiciones[posicionY - 1][posicionX].getIcon()!= imagenesTablero[0]) {
+                    if (posiciones[posicionY - 1][posicionX].getIcon()!= imagenesTablero[1]) {
                         posiciones[posicionY][posicionX].setIcon(imagenesTablero[0]);
                         posicionY--;
                         posiciones[posicionY][posicionX].setIcon(imagenesTablero[2]);
@@ -92,7 +92,7 @@ public class Caronte extends javax.swing.JFrame {
                 break;
             case KeyEvent.VK_DOWN:
                 if (posicionY < posiciones.length - 1) {
-                    if (posiciones[posicionY + 1][posicionX].getIcon() != imagenesTablero[0]) {
+                    if (posiciones[posicionY + 1][posicionX].getIcon() != imagenesTablero[1]) {
                         posiciones[posicionY][posicionX].setIcon(imagenesTablero[0]);
                         posicionY++;
                         posiciones[posicionY][posicionX].setIcon(imagenesTablero[2]);
@@ -105,8 +105,8 @@ public class Caronte extends javax.swing.JFrame {
 
                 break;
             case KeyEvent.VK_RIGHT:
-                if (posicionX < posiciones.length - 1) {
-                    if (posiciones[posicionY][posicionX].getIcon() != imagenesTablero[0]) {
+                if (posicionX < posiciones.length -1 ) {
+                    if (posiciones[posicionY][posicionX].getIcon() != imagenesTablero[1]) {
                         posiciones[posicionY][posicionX].setIcon(imagenesTablero[0]);
                         posicionX++;
                         posiciones[posicionY][posicionX].setIcon(imagenesTablero[2]);
@@ -118,7 +118,7 @@ public class Caronte extends javax.swing.JFrame {
                 break;
             case KeyEvent.VK_LEFT:
                 if (posicionX > 0) {
-                    if (posiciones[posicionY][posicionX - 1].getIcon() != imagenesTablero[0]) {
+                    if (posiciones[posicionY][posicionX - 1].getIcon() != imagenesTablero[1]) {
                         posiciones[posicionY][posicionX].setIcon(imagenesTablero[0]);
                         posicionX--;
                         posiciones[posicionY][posicionX].setIcon(imagenesTablero[2]);
