@@ -23,7 +23,7 @@ public class HeroeMovimiento {
     private int dy;
     private int x;
     private int y;
-    private Image imagen;
+
 
     private int contadorPasos;
 
@@ -33,9 +33,7 @@ public class HeroeMovimiento {
     public HeroeMovimiento() {
         this.x = 0;
         this.y = 0;
-        heroe = "kirito.png";
-        ImageIcon img = new ImageIcon(this.getClass().getResource(getHeroe()));
-        imagen = img.getImage();
+
     }
 
     /**
@@ -212,23 +210,4 @@ public class HeroeMovimiento {
     public void setY(int y) {
         this.y = y;
     }
-
-    /**
-     * Llama la variable imagen.
-     *
-     * @return the imagen
-     */
-    public Image getImagen() {
-        return imagen;
-    }
-
-    /**
-     * Modifica la variable imagen.
-     *
-     * @param imagen the imagen to set
-     */
-    public void setImagen(Image imagen) {
-        this.imagen = imagen;
-    }
-
 }

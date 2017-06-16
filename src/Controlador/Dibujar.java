@@ -49,7 +49,7 @@ public class Dibujar extends JPanel implements ActionListener {
     public void paint(Graphics grafica) {
         super.paint(grafica);
         Graphics2D g2 = (Graphics2D) grafica;
-        g2.drawImage(heroe.getImagen(), heroe.getX(), heroe.getY(), null);
+        
     }
 
     /**
