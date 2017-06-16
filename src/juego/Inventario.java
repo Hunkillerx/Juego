@@ -5,7 +5,7 @@
  */
 package juego;
 
-import java.util.List;
+import java.util.Queue;
 
 /**
  * Esta clase crea el espacio para guardar los items.
@@ -17,16 +17,16 @@ import java.util.List;
 public class Inventario {
 
     /**
-     * Lista que va ser el inventario.
+     * Arreglo que va ser el inventario.
      */
-    private List inventarioItems;
+    private Queue[] inventarioItems;
 
     /**
      * Metodo para llamar el inventario de items.
      *
      * @return Retorna la lista del inventario.
      */
-    public List getInventarioItems() {
+    public Queue[] getInventarioItems() {
         return inventarioItems;
     }
 
@@ -35,7 +35,7 @@ public class Inventario {
      *
      * @param inventarioItems lista en donde se guardan los items.
      */
-    public void setInventarioItems(List inventarioItems) {
+    public void setInventarioItems(Queue[] inventarioItems) {
         this.inventarioItems = inventarioItems;
     }
 }
