@@ -135,14 +135,16 @@ public class Caronte extends javax.swing.JFrame {
             default:
                 break;
         }
+                if (posiciones[posicionX][posicionY].equals(posiciones[3][0])) {
+            GraficaBatalla Batalla = new GraficaBatalla();
+            Batalla.setVisible(true);
+                    setVisible(false);
+        }
 
     }//GEN-LAST:event_formKeyPressed
     
     public void Batalla() {
-        if (posiciones[posicionX][posicionY].equals(posiciones[3][0])) {
-            GraficaBatalla Batalla = new GraficaBatalla();
-            Batalla.setVisible(true);
-        }
+
     }
 
     /**

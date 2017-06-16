@@ -19,7 +19,7 @@ import juego.Personaje;
  * @version 1.0
  */
 public class GraficaBatalla extends javax.swing.JFrame {
-
+    
     private Personaje heroe;
     private Personaje monstruoE;
 
@@ -28,11 +28,12 @@ public class GraficaBatalla extends javax.swing.JFrame {
      */
     public GraficaBatalla() {
         initComponents();
+        almacenPersonaje.vincular(1);
         heroe = almacenPersonaje.getHeroe();
         monstruoE = almacenPersonaje.getMonstruo1();
         jPanel2.setVisible(false);
         MonstruoAleatorio();
-
+        
     }
 
     /**
@@ -161,10 +162,11 @@ public class GraficaBatalla extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        
         batalla.atacarAlMostruo(3);
         System.out.println("la sandre del mostruo" + monstruoE.getCurrentHp());
     }//GEN-LAST:event_jButton5ActionPerformed
-
+    
     public void MonstruoAleatorio() {
         Personaje[] enemigo = almacenPersonaje.getAlmacenMonstruos();
         Random aleatorio = new Random();

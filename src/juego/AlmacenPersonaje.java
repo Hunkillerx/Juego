@@ -56,9 +56,10 @@ public class AlmacenPersonaje {
      * @param numero numero que se ingresa de forma aleatoria.
      */
     public void vincular(int numero) {
-        
+        if (numero == 1) {
             monstruo1 = almacenMonstruos[0];
-        
+        }
+
     }
 
     private Personaje heroe = new Personaje("Kirito", 1, 5, 20, 25, 120, 0, 120, false, false, ataque1, ataque9, ataque6);
