@@ -9,6 +9,7 @@ import Controlador.HeroeMovimiento;
 import java.awt.event.KeyEvent;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JFrame;
 
 /**
  * Esta es la interfaz grafica del movimiento y el mapa.
@@ -29,6 +30,7 @@ public class Caronte extends javax.swing.JFrame {
             setIconImage(new ImageIcon(getClass().getResource("../Recursos/kimera.png")).getImage());
         } catch (Exception e) {
         }
+        
         iniciarComponentes();
     }
 
@@ -46,7 +48,6 @@ public class Caronte extends javax.swing.JFrame {
 //            contador.setContadorPasos(0);
 //        }
 //    }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -76,19 +77,19 @@ public class Caronte extends javax.swing.JFrame {
 
     private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
         // TODO add your handling code here:
-        
+
         int teclaPresionada = evt.getKeyCode();
 
         switch (teclaPresionada) {
             case KeyEvent.VK_UP:
                 if (posicionY > 0) {
-                    if (posiciones[posicionY - 1][posicionX].getIcon()!= imagenesTablero[1]) {
+                    if (posiciones[posicionY - 1][posicionX].getIcon() != imagenesTablero[1]) {
                         posiciones[posicionY][posicionX].setIcon(imagenesTablero[0]);
                         posicionY--;
                         posiciones[posicionY][posicionX].setIcon(imagenesTablero[2]);
                         repaint();
                         revalidate();
-                       //En caso que la posicion no sea una baldosa 'vacia'
+                        //En caso que la posicion no sea una baldosa 'vacia'
                     }
                 }
                 break;
@@ -107,8 +108,8 @@ public class Caronte extends javax.swing.JFrame {
 
                 break;
             case KeyEvent.VK_RIGHT:
-                if (posicionX < posiciones.length -1 ) {
-                    if (posiciones[posicionY][posicionX +1].getIcon() != imagenesTablero[1]) {
+                if (posicionX < posiciones.length - 1) {
+                    if (posiciones[posicionY][posicionX + 1].getIcon() != imagenesTablero[1]) {
                         posiciones[posicionY][posicionX].setIcon(imagenesTablero[0]);
                         posicionX++;
                         posiciones[posicionY][posicionX].setIcon(imagenesTablero[2]);
@@ -134,8 +135,15 @@ public class Caronte extends javax.swing.JFrame {
             default:
                 break;
         }
-    
+
     }//GEN-LAST:event_formKeyPressed
+    
+    public void Batalla() {
+        if (posiciones[posicionX][posicionY].equals(posiciones[3][0])) {
+            GraficaBatalla Batalla = new GraficaBatalla();
+            Batalla.setVisible(true);
+        }
+    }
 
     /**
      * @param args the command line arguments
