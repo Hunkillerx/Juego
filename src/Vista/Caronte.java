@@ -313,5 +313,4 @@ public class Caronte extends javax.swing.JFrame {
         panelTablero.add(posiciones[9][9] = new JLabel(imagenesTablero[1]));
         //</editor-fold>
     }
-
 }
