@@ -106,7 +106,7 @@ public class Caronte extends javax.swing.JFrame {
                 break;
             case KeyEvent.VK_RIGHT:
                 if (posicionX < posiciones.length -1 ) {
-                    if (posiciones[posicionY][posicionX].getIcon() != imagenesTablero[1]) {
+                    if (posiciones[posicionY][posicionX +1].getIcon() != imagenesTablero[1]) {
                         posiciones[posicionY][posicionX].setIcon(imagenesTablero[0]);
                         posicionX++;
                         posiciones[posicionY][posicionX].setIcon(imagenesTablero[2]);
