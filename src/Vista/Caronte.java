@@ -59,9 +59,6 @@ public class Caronte extends javax.swing.JFrame {
         panelTablero = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(645, 660));
-        setResizable(false);
-        setSize(new java.awt.Dimension(645, 660));
         addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 formKeyPressed(evt);
@@ -186,7 +183,7 @@ public class Caronte extends javax.swing.JFrame {
     private void iniciarComponentes() {
 
         imagenesTablero[0] = new ImageIcon(getClass().getResource("../Recursos/fondo.png"));
-        imagenesTablero[1] = new ImageIcon(getClass().getResource("../Recursos/2.jpg"));
+        imagenesTablero[1] = new ImageIcon(getClass().getResource("../Recursos/Draven_passive.png"));
         imagenesTablero[2] = new ImageIcon(getClass().getResource("../Recursos/pj.jpg"));
         imagenesTablero[3] = new ImageIcon(getClass().getResource("../Recursos/fondo.png"));
         imagenesTablero[4] = new ImageIcon(getClass().getResource("../Recursos/fondo.png"));
@@ -278,8 +275,8 @@ public class Caronte extends javax.swing.JFrame {
         panelTablero.add(posiciones[7][3] = new JLabel(imagenesTablero[1]));
         panelTablero.add(posiciones[7][4] = new JLabel(imagenesTablero[1]));
         panelTablero.add(posiciones[7][5] = new JLabel(imagenesTablero[1]));
-        panelTablero.add(posiciones[7][6] = new JLabel(imagenesTablero[1]));
-        panelTablero.add(posiciones[7][7] = new JLabel(imagenesTablero[1]));
+        panelTablero.add(posiciones[7][6] = new JLabel(imagenesTablero[0]));
+        panelTablero.add(posiciones[7][7] = new JLabel(imagenesTablero[0]));
         panelTablero.add(posiciones[7][8] = new JLabel(imagenesTablero[0]));
         panelTablero.add(posiciones[7][9] = new JLabel(imagenesTablero[1]));
 
