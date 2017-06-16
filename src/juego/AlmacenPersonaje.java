@@ -5,10 +5,11 @@
  */
 package juego;
 
-import java.util.List;
-
+import Controlador.HeroeMovimiento;
+import juego.Personaje;
 /**
- * Esta clase crea el espacio y almacena los personajes entre heroes y monstruos.
+ * Esta clase crea el espacio y almacena los personajes entre heroes y
+ * monstruos.
  *
  * @author Jose Diaz & Brayan Herrera
  * @since 08/06/2017
@@ -16,49 +17,31 @@ import java.util.List;
  */
 public class AlmacenPersonaje {
 
-    public AlmacenPersonaje() {
-        this.almacenMonstruos = almacenMonstruos;
-        this.alamacenHeroes = alamacenHeroes;
-    }
-
-    private List almacenMonstruos;
-    private List alamacenHeroes;
-    
-    
-    /**
-     *
-     * @return
-     */
-    public List getAlmacenMonstruos() {
+    public Personaje[] getAlmacenMonstruos() {
         return almacenMonstruos;
     }
 
-    /**
-     *
-     * @param almacenMonstruos
-     */
-    public void setAlmacenMonstruos(List almacenMonstruos) {
-        this.almacenMonstruos = almacenMonstruos;
-    }
+    Personaje[] almacenMonstruos = new Personaje[5];
 
     /**
-     *
-     * @return
+     * Aqui estan almacenados los monstruos.
      */
-    public List getAlamacenHeroes() {
-        return alamacenHeroes;
+    public void bestiario() {
+
+        almacenMonstruos[0] = new Personaje("Licantropo", 1, 0, 0, 0, 0, 0, 0, null, null, null);
+
+        almacenMonstruos[1] = new Personaje("Kimera", 1, 0, 0, 0, 0, 0, 0, null, null, null);
+
+        almacenMonstruos[2] = new Personaje("Ogro de las cavernas", 1, 0, 0, 0, 0, 0, 0, null, null, null);
+
+        almacenMonstruos[3] = new Personaje("Nocturne", 2, 0, 0, 0, 0, 0, 0, null, null, null);
+
     }
 
-    /**
-     *
-     * @param alamacenHeroes
-     */
-    public void setAlamacenHeroes(List alamacenHeroes) {
-        this.alamacenHeroes = alamacenHeroes;
+    public Personaje getHeroe() {
+        return heroe;
     }
 
-    public void bestiario(){
-        almacenMonstruos.add(new Personaje("licantropo", 1, 3, 20, 40, 150, 0, 150, null, null, null, alamacenHeroes));
-        almacenMonstruos.add(new Personaje("kimera", 2, 4, 25, 35, 200, 0, 200, null, null, null, alamacenHeroes));
-    }
+    Personaje heroe = new Personaje("Kirito", 1, 0, 0, 0, 0, 0, 0,null , null, null);
+    
 }

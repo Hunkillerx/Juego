@@ -3,12 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Modelo;
+package Controlador;
 
-import juego.Items;
+import java.util.Arrays;
 import java.util.Queue;
 import juego.Items;
 import juego.Personaje;
+import java.util.Random;
+import juego.AlmacenPersonaje;
 
 /**
  * Esta clase contiene los metodos para el evento de la batalla.
@@ -22,6 +24,8 @@ public class Batalla {
     Items almcItem;
     Personaje person;
     private Queue enemigos;
+    Personaje heroe = new AlmacenPersonaje().getHeroe();
+    Personaje[] monstruo = new AlmacenPersonaje().getAlmacenMonstruos().clone();
 
     /**
      * Metedo para cuando algun personaje ataca.
@@ -29,7 +33,18 @@ public class Batalla {
      * @param eleccionJugador eleccion del jugador.
      */
     public void atacar(int eleccionJugador) {
-
+        int dmg = heroe.getAtaque() + heroe.getAtaque1();
+        if (dmg < 1) {
+            dmg = 1;
+        }
+        monstruo.getMonstruo1().setCurrentHp(monstruo.getMonstruo1().getCurrentHp() - dmg);
+        if (monstruo.getMonstruo1().getCurrentHp() > 0) {
+            dmg = monstruo.getMonstruo1().getAtaque() + monstruo.getMonstruo1().getAtaque1().getDagno() - heroe.getMonstruo1().getDefensa();
+            if (dmg < 1) {
+                dmg = 1;
+            }
+            heroe.getHeroe1().setCurrentHp(heroe.getHeroe1().getCurrentHp() - dmg);
+        }
     }
 
     /**
@@ -66,7 +81,9 @@ public class Batalla {
      * @return return true si ataca el heroe y false si ataca el monstruo.
      */
     public boolean turnoAleatorio() {
-        return false;
+        Random aleatorio = new Random();
+        int numero = 1 + aleatorio.nextInt(100);
+        return numero % 2 == 0;
     }
 
     /**

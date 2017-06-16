@@ -98,9 +98,7 @@ public class Batalla extends javax.swing.JFrame {
 
     public void imagenEnemigo(){
        almacenPersonaje.getAlmacenMonstruos();
-        if(){
-            
-        }
+
     }
     
     /**

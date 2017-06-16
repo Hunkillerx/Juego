@@ -27,7 +27,7 @@ public class Personaje {
     private Habilidad ataque1;
     private Habilidad ataque2;
     private Habilidad ataque3;
-    private List almacenHabilidades;
+    private Habilidad[] almacenHabilidades = new Habilidad[10];
 
     /**
      * Este es el constructor de la clase Personaje.
@@ -46,7 +46,7 @@ public class Personaje {
      * @param almacenHabilidades Lista donde se almacenan las habilidades
      * creadas.
      */
-    public Personaje(String nombre, int tipo, int nivel, int ataque, int defensa, int hp, int estado, int currentHp, Habilidad ataque1, Habilidad ataque2, Habilidad ataque3, List almacenHabilidades) {
+    public Personaje(String nombre, int tipo, int nivel, int ataque, int defensa, int hp, int estado, int currentHp, Habilidad ataque1, Habilidad ataque2, Habilidad ataque3) {
         this.nombre = nombre;
         this.tipo = tipo;
         this.nivel = nivel;
@@ -58,7 +58,6 @@ public class Personaje {
         this.ataque1 = ataque1;
         this.ataque2 = ataque2;
         this.ataque3 = ataque3;
-        this.almacenHabilidades = almacenHabilidades;
     }
 
     Personaje() {
@@ -268,23 +267,25 @@ public class Personaje {
      *
      * @return the almacenHabilidades
      */
-    public List getAlmacenHabilidades() {
+    public Habilidad[] getAlmacenHabilidades() {
         return almacenHabilidades;
-    }
-
-    /**
-     * Modifica la lista de almacenHabilidades.
-     *
-     * @param almacenHabilidades the almacenHabilidades to set
-     */
-    public void setAlmacenHabilidades(List almacenHabilidades) {
-        this.almacenHabilidades = almacenHabilidades;
     }
     
     /**
      * Almacena habilidades creadas.
      */
     public void habilidades (){
-        almacenHabilidades.add(new Habilidad(20, 1, 4, "Espadazo"));
+        
+        almacenHabilidades[0]= new Habilidad(10, 1, 4, "Golpe");
+        almacenHabilidades[1]= new Habilidad(25, 1, 4, "Codazo");
+        almacenHabilidades[2]= new Habilidad(20, 1, 1, "puño de fuego");
+        almacenHabilidades[3]= new Habilidad(30, 2, 2, "Trueno");
+        almacenHabilidades[4]= new Habilidad(23, 2, 1, "Lava");
+        almacenHabilidades[5]= new Habilidad(15, 1, 4, "Patada");
+        almacenHabilidades[6]= new Habilidad(10, 2, 3, "Mordisco");
+        almacenHabilidades[7]= new Habilidad(20, 2, 2, "Congelacion");
+        almacenHabilidades[8]= new Habilidad(30, 1, 3, "Cuchillada");
+        almacenHabilidades[9]= new Habilidad(17, 2, 3, "Zarpazo");
+        
     }
 }

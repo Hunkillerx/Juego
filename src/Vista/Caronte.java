@@ -5,8 +5,9 @@
  */
 package Vista;
 
-import Modelo.Dibujar;
+import Controlador.Dibujar;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 /**
  * Esta es la interfaz grafica del movimiento y el mapa.
@@ -27,13 +28,17 @@ public class Caronte extends javax.swing.JFrame {
         setVisible(true);
 
         setTitle("Juego");
+
         setSize(1365, 700);
 
         setLocationRelativeTo(null);
+
         setResizable(false);
+
         initComponents();
 
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -44,11 +49,14 @@ public class Caronte extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1063, 675));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setOpaque(false);
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1060, 710));
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/amazonas.jpg"))); // NOI18N
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -93,6 +101,7 @@ public class Caronte extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabelFondo;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 
 }

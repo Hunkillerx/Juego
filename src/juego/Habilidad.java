@@ -19,8 +19,8 @@ class Habilidad {
     private int efecto;
     private String nombre;
 
-    // Tipo = 1. Cuerpo a cuerpo , 2. largo alcance 
-    // Efecto = 1. Quemadura, 2. Paralisis, 3. Sangrado 
+    // Tipo = 1. Cuerpo a cuerpo , 2. largo alcance
+    // Efecto = 1. Quemadura, 2. Paralisis, 3. Sangrado, 4. Ninguno
     /**
      * Constructor de la clase Habilidad.
      *

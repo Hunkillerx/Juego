@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Modelo;
+package Controlador;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -14,6 +14,7 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import javax.swing.JPanel;
 import javax.swing.Timer;
+import Vista.Caronte;
 
 /**
  * Esta clase dibuja el panel en el que se mueve la imagen.
@@ -32,8 +33,9 @@ public class Dibujar extends JPanel implements ActionListener {
      */
     public Dibujar() {
 
-        setBackground(Color.decode(String.valueOf(0)));
+        setBackground(Color.BLACK);
         setFocusable(true);
+        setOpaque(false);
         addKeyListener(new teclado());
         timer.start();
     }
