@@ -29,7 +29,6 @@ public class Personaje {
     private Habilidad ataque1;
     private Habilidad ataque2;
     private Habilidad ataque3;
-    private Habilidad[] almacenHabilidades = new Habilidad[10];
 
     /**
      * Este es el constructor de la clase Personaje.
@@ -301,21 +300,5 @@ public class Personaje {
         this.ataque3 = ataque3;
     }
 
-    /**
-     * Llama la lista de almacenHabilidades.
-     *
-     * @return the almacenHabilidades
-     */
-    public Habilidad[] getAlmacenHabilidades() {
-        return almacenHabilidades;
-    }
 
-    /**
-     * Almacena habilidades creadas.
-     */
-    public void habilidades() {
-
-
-
-    }
 }
