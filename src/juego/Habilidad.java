@@ -12,7 +12,7 @@ package juego;
  * @since 08/06/2017
  * @version 1.0
  */
-class Habilidad {
+public class Habilidad {
 
     private int daño;
     private int tipo;

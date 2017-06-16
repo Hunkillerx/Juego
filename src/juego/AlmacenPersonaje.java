@@ -19,6 +19,7 @@ import juego.Personaje;
 public class AlmacenPersonaje {
 
     private Personaje[] almacenMonstruos = new Personaje[5];
+    private Personaje monstruo1;
 
     /**
      * Aqui estan almacenados los monstruos.
@@ -32,6 +33,10 @@ public class AlmacenPersonaje {
         almacenMonstruos[2] = new Personaje("Ogro de las cavernas", 1, 0, 0, 0, 0, 0, 0, null, null, null);
 
         almacenMonstruos[3] = new Personaje("Nocturne", 2, 0, 0, 0, 0, 0, 0, null, null, null);
+        
+        for (int i = 0; i < almacenMonstruos.length; i++) {
+            setMonstruo1(almacenMonstruos[i]);
+        }
 
     }
 
@@ -55,4 +60,21 @@ public class AlmacenPersonaje {
         return heroe;
     }
 
+    /**
+     * Llama la variable monstruo1
+     *
+     * @return the monstruo1
+     */
+    public Personaje getMonstruo1() {
+        return monstruo1;
+    }
+
+    /**
+     * Modifica la variable monstruo1.
+     *
+     * @param monstruo1 the monstruo1 to set
+     */
+    public void setMonstruo1(Personaje monstruo1) {
+        this.monstruo1 = monstruo1;
+    }
 }

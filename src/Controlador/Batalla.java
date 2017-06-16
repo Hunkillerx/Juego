@@ -25,7 +25,7 @@ public class Batalla {
     Personaje person;
     private Queue enemigos;
     Personaje heroe = new AlmacenPersonaje().getHeroe();
-    Personaje[] monstruo = new AlmacenPersonaje().getAlmacenMonstruos().clone();
+    Personaje monstruo = new AlmacenPersonaje().getMonstruo1();
 
     /**
      * Metedo para cuando algun personaje ataca.
@@ -33,17 +33,18 @@ public class Batalla {
      * @param eleccionJugador eleccion del jugador.
      */
     public void atacar(int eleccionJugador) {
-        int dmg = heroe.getAtaque() + heroe.getAtaque1();
+
+        int dmg = heroe.getAtaque() + heroe.getAtaque1().getDaño();
         if (dmg < 1) {
             dmg = 1;
         }
-        monstruo.getMonstruo1().setCurrentHp(monstruo.getMonstruo1().getCurrentHp() - dmg);
-        if (monstruo.getMonstruo1().getCurrentHp() > 0) {
-            dmg = monstruo.getMonstruo1().getAtaque() + monstruo.getMonstruo1().getAtaque1().getDagno() - heroe.getMonstruo1().getDefensa();
+        monstruo.setCurrentHp(monstruo.getCurrentHp() - dmg);
+        if (monstruo.getCurrentHp() > 0) {
+            dmg = monstruo.getAtaque() + monstruo.getAtaque1().getDaño() - heroe.getDefensa();
             if (dmg < 1) {
                 dmg = 1;
             }
-            heroe.getHeroe1().setCurrentHp(heroe.getHeroe1().getCurrentHp() - dmg);
+            heroe.setCurrentHp(heroe.getCurrentHp() - dmg);
         }
     }
 
