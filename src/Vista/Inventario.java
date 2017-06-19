@@ -5,6 +5,8 @@
  */
 package Vista;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author Herrera Hernandez
@@ -16,6 +18,8 @@ public class Inventario extends javax.swing.JFrame {
      */
     public Inventario() {
         initComponents();
+        //FondoInv.setIcon(new ImageIcon(getClass().getResource("/Recursos/FondoInv.jpg")));
+       // FondoOpciones.setIcon(new ImageIcon(getClass().getResource("/Recursos/fondoOpcionesMaleta.jpg")));
     }
 
     /**
@@ -74,10 +78,8 @@ public class Inventario extends javax.swing.JFrame {
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(612, 0, 220, 490));
 
-        FondoInv.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/FondoInv.jpg"))); // NOI18N
-        getContentPane().add(FondoInv, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 610, 510));
-
-        FondoOpciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/fondoOpcionesMaleta.jpg"))); // NOI18N
+        FondoInv.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/inventario.jpg"))); // NOI18N
+        getContentPane().add(FondoInv, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 480));
         getContentPane().add(FondoOpciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 0, 220, 490));
 
         pack();
