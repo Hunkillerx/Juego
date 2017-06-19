@@ -19,21 +19,25 @@ import juego.Personaje;
  * @version 1.0
  */
 public class GraficaBatalla extends javax.swing.JFrame {
-    
+
     private Personaje heroe;
     private Personaje monstruoE;
+    private int eleccionJugador;
 
     /**
      * Creates new form Batalla
      */
     public GraficaBatalla() {
         initComponents();
-        almacenPersonaje.vincular(1);
+        Monstruo.setIcon(new ImageIcon(getClass().getResource("/Recursos/" + (almacenPersonaje.getMonstruo1().getNombre()) + ".png")));
         heroe = almacenPersonaje.getHeroe();
         monstruoE = almacenPersonaje.getMonstruo1();
+        batalla.turnoAleatorio();
+        batalla.turnos(heroe, monstruoE, eleccionJugador);
         jPanel2.setVisible(false);
+        /*
         MonstruoAleatorio();
-        
+         */
     }
 
     /**
@@ -83,7 +87,7 @@ public class GraficaBatalla extends javax.swing.JFrame {
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 420, 560, 130));
 
         Heroe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Kirito Batalla.png"))); // NOI18N
-        getContentPane().add(Heroe, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 230, 190));
+        getContentPane().add(Heroe, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 230, 190));
         getContentPane().add(Monstruo, new org.netbeans.lib.awtextra.AbsoluteConstraints(524, 10, 270, 180));
 
         jPanel2.setOpaque(false);
@@ -145,34 +149,36 @@ public class GraficaBatalla extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-
+        eleccionJugador = 2;
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         jPanel2.setVisible(true);
+        eleccionJugador = 1;
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        batalla.atacarAlMostruo(1);
+        batalla.atacarAlMostruo(heroe, monstruoE, 1);
 
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        batalla.atacarAlMostruo(2);
+        batalla.atacarAlMostruo(heroe, monstruoE, 2);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        
-        batalla.atacarAlMostruo(3);
-        System.out.println("la sandre del mostruo" + monstruoE.getCurrentHp());
+
+        batalla.atacarAlMostruo(heroe, monstruoE, 3);
+        System.out.println("la sandre del mostruo " + monstruoE.getCurrentHp());
+        System.out.println("la sandre del heroe " + heroe.getCurrentHp());
     }//GEN-LAST:event_jButton5ActionPerformed
-    
+
     public void MonstruoAleatorio() {
         Personaje[] enemigo = almacenPersonaje.getAlmacenMonstruos();
         Random aleatorio = new Random();
         int num = 1 + aleatorio.nextInt(1);
         if (num == 1) {
-            almacenPersonaje.vincular(1);
+            ;
         }
     }
 
