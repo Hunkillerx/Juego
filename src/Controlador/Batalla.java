@@ -20,7 +20,6 @@ import java.util.Random;
 public class Batalla {
 
     Items almcItem;
-    Personaje person;
     private Queue enemigos;
 
     /**
@@ -35,51 +34,51 @@ public class Batalla {
         if (heroe.getCurrentHp() > 0) {
             switch (eleccionJugador) {
                 case 1: {
-                    int dmg = heroe.getAtaque() + heroe.getAtaque1().getDaño();
+                    int dmg = heroe.getAtaque() + heroe.getAtaque1().getDaño() - monstruo.getDefensa();
                     if (dmg < 1) {
                         dmg = 1;
                     }
                     monstruo.setCurrentHp(monstruo.getCurrentHp() - dmg);
-                    /*
-                if (monstruo.getCurrentHp() > 0) {
-                    dmg = monstruo.getAtaque() + monstruo.getAtaque1().getDaño() - heroe.getDefensa();
-                    if (dmg < 1) {
-                        dmg = 1;
+
+                    if (monstruo.getCurrentHp() > 0) {
+                        dmg = monstruo.getAtaque() + monstruo.getAtaque1().getDaño() - heroe.getDefensa();
+                        if (dmg < 1) {
+                            dmg = 1;
+                        }
+                        heroe.setCurrentHp(heroe.getCurrentHp() - dmg);
                     }
-                    heroe.setCurrentHp(heroe.getCurrentHp() - dmg);
-                }*/
                     break;
                 }
                 case 2: {
-                    int dmg = heroe.getAtaque() + heroe.getAtaque2().getDaño();
+                    int dmg = heroe.getAtaque() + heroe.getAtaque2().getDaño() - monstruo.getDefensa();
                     if (dmg < 1) {
                         dmg = 1;
                     }
                     monstruo.setCurrentHp(monstruo.getCurrentHp() - dmg);
-                    /*
-                if (monstruo.getCurrentHp() > 0) {
-                    dmg = monstruo.getAtaque() + monstruo.getAtaque2().getDaño() - heroe.getDefensa();
-                    if (dmg < 1) {
-                        dmg = 1;
+
+                    if (monstruo.getCurrentHp() > 0) {
+                        dmg = monstruo.getAtaque() + monstruo.getAtaque2().getDaño() - heroe.getDefensa();
+                        if (dmg < 1) {
+                            dmg = 1;
+                        }
                     }
-                }*/
                     break;
 
                 }
                 case 3: {
-                    int dmg = heroe.getAtaque() + heroe.getAtaque3().getDaño();
+                    int dmg = heroe.getAtaque() + heroe.getAtaque3().getDaño() - monstruo.getDefensa();
                     if (dmg < 1) {
                         dmg = 1;
                     }
                     monstruo.setCurrentHp(monstruo.getCurrentHp() - dmg);
-                    /*
-                if (monstruo.getCurrentHp() > 0) {
-                    dmg = monstruo.getAtaque() + monstruo.getAtaque3().getDaño() - heroe.getDefensa();
-                    if (dmg < 1) {
-                        dmg = 1;
+
+                    if (monstruo.getCurrentHp() > 0) {
+                        dmg = monstruo.getAtaque() + monstruo.getAtaque3().getDaño() - heroe.getDefensa();
+                        if (dmg < 1) {
+                            dmg = 1;
+                        }
+                        heroe.setCurrentHp(heroe.getCurrentHp() - dmg);
                     }
-                    heroe.setCurrentHp(heroe.getCurrentHp() - dmg);
-                }*/
                     break;
                 }
                 default:
@@ -99,7 +98,6 @@ public class Batalla {
      *
      * @param heroe Personaje principal.
      * @param monstruo Personaje rival o enemigo.
-     * @param numero numero al azar para elegir ataque.
      */
     public void atacarAlHeroe(Personaje heroe, Personaje monstruo) {
 
@@ -140,27 +138,35 @@ public class Batalla {
     /**
      * Metodo para usar un item.
      *
+     * @param heroe Personaje principal.
+     * @param monstruo Personaje rival o enemigo.
      * @param eleccionJugador eleccion del jugador.
      */
-    public void usarItem(int eleccionJugador) {
+    public void usarItem(Personaje heroe, Personaje monstruo, int eleccionJugador) {
 
         if (almcItem.getTipo() == eleccionJugador && eleccionJugador == 1) {
-            person.setCurrentHp(person.getCurrentHp() + 15);
+            heroe.setCurrentHp(heroe.getCurrentHp() + 15);
+            atacarAlHeroe(heroe, monstruo);
 
         } else if (almcItem.getTipo() == eleccionJugador && eleccionJugador == 2) {
-            person.setAtaque(person.getAtaque() + 10);
+            heroe.setAtaque(heroe.getAtaque() + 10);
+            atacarAlHeroe(heroe, monstruo);
 
         } else if (almcItem.getTipo() == eleccionJugador && eleccionJugador == 3) {
-            person.setCurrentHp(person.getCurrentHp() + 30);
+            heroe.setCurrentHp(heroe.getCurrentHp() + 30);
+            atacarAlHeroe(heroe, monstruo);
 
         } else if (almcItem.getTipo() == eleccionJugador && eleccionJugador == 4) {
-            person.setDefensa(person.getDefensa() + 10);
+            heroe.setDefensa(heroe.getDefensa() + 10);
+            atacarAlHeroe(heroe, monstruo);
 
         } else if (almcItem.getTipo() == eleccionJugador && eleccionJugador == 5) {
-            person.setDefensa(person.getDefensa() + 30);
+            heroe.setDefensa(heroe.getDefensa() + 30);
+            atacarAlHeroe(heroe, monstruo);
 
         } else if (almcItem.getTipo() == eleccionJugador && eleccionJugador == 6) {
-            person.setAtaque(person.getAtaque() + 30);
+            heroe.setAtaque(heroe.getAtaque() + 30);
+            atacarAlHeroe(heroe, monstruo);
         }
 
     }
@@ -194,7 +200,7 @@ public class Batalla {
             if (eleccionJugador == 1) {
                 atacarAlMostruo(heroe, monstruo, eleccionJugador);
             } else if (eleccionJugador == 2) {
-                usarItem(0);
+                usarItem(heroe, monstruo, eleccionJugador);
             }
             monstruo.setSiguiente(true);
         } else if (turnoAleatorio() == false) {
@@ -208,7 +214,7 @@ public class Batalla {
             if (eleccionJugador == 1) {
                 atacarAlMostruo(heroe, monstruo, eleccionJugador);
             } else if (eleccionJugador == 2) {
-                usarItem(0);
+                usarItem(heroe, monstruo, eleccionJugador);
             }
             monstruo.setSiguiente(true);
 
